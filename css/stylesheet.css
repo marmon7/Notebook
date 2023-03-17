@@ -1,0 +1,11 @@
+aside {grid-area: aside;}
+header {grid-area: header;}
+nav {grid-area: nav;}
+footer {grid-area: footer;}
+body {display:grid; grid-template-areas: 
+"aside header header header header"
+"aside nav nav nav nav"
+"aside section section section section"
+"aside section section section section"
+"aside section section section section"
+"aside footer footer footer footer";}

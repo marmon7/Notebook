@@ -3,14 +3,15 @@ ul {list-style: square;}
 header {background-color: linen; grid-column: 2/3; grid-row: 1/2;}
 nav {display:flex; justify-content: right; background-color: linen; grid-column: 2/3; grid-row: 2/3;}
 footer {background-color: linen; grid-column: 2/3; grid-row: 5/6; text-align: center;}
-section {display: flex; flex-direction: column; background-color: linen; grid-column: 2/3; grid-row: 3/4;}
+main {display: flex; flex-direction: column; background-color: linen; grid-column: 2/3; grid-row: 3/4;}
 .even_buttons {display: flex; justify-content: space-between;}
 .right_buttons {display: flex; justify-content: right;}
 .green_button {background-color: darkslategray; color: white;}
 #grey_button {background-color: #56536A; color: white;}
 #red_button {background-color: #9B332C; color: white;}
 button {border-radius: 1em; margin: 0 0.5em 0 0.5em; padding: 1em; border-style: none;}
-h1 {text-align: center; font-size: 2em;}
+h2 {text-align: center; font-size: 2em;}
+h1 {text-align: center;}
 nav > div {margin-right: 1em;}
 textarea {border-color: #256993; margin: 1em 0.5em 1em 0.5em; border-width: 0.25em; height: 20em;}
 

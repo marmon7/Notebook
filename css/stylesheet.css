@@ -1,11 +1,13 @@
-aside {grid-area: aside;}
-header {grid-area: header;}
-nav {grid-area: nav;}
-footer {grid-area: footer;}
-body {display:grid; grid-template-areas: 
-"aside header header header header"
-"aside nav nav nav nav"
-"aside section section section section"
-"aside section section section section"
-"aside section section section section"
-"aside footer footer footer footer";}
+aside {background-color: floralwhite; grid-column: 1/2; grid-row: 1/5;}
+header {background-color: linen; grid-column: 2/3; grid-row: 1/2;}
+nav {display:flex; justify-content: right; background-color: linen; grid-column: 2/3; grid-row: 2/3;}
+footer {background-color: linen; grid-column: 2/3; grid-row: 4/5;}
+section {display: flex; flex-direction: column; background-color: linen; grid-column: 2/3; grid-row: 3/4;}
+.even_buttons {display: flex; justify-content: space-between;}
+.right_buttons {display: flex; justify-content: right;}
+h1 {text-align: center; color: #256993;}
+footer {text-align: center;color: #256993;}
+nav > a {margin-right: 1%; text-decoration: none;}
+
+body {display:grid; grid-template-columns: 200px 4fr; grid-template-rows: 100px 50px 331px 180px; 
+margin: 0;}

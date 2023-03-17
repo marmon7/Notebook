@@ -17,4 +17,5 @@ textarea {border-color: #256993; margin: 1em 0.5em 1em 0.5em; border-width: 0.25
 body {display:grid; grid-template-columns: 15em 4fr; grid-template-rows: 5em 2em 20em 4.25em 10em; 
 margin: 0;
 background-color: linen;
-color:#256993}
+color:#256993;
+font-family: 'Roboto Mono', monospace;}

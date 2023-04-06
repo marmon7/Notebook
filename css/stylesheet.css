@@ -40,6 +40,8 @@ textarea {border-color: #256993; margin: 1em 0.5em 1em 0.5em; border-width: 0.25
 
 .darkthemeaside {background-color: #00050f;}
 
+.hidden {visibility: hidden;}
+
 @media screen and (max-width: 600px) {
     body {display:flex; flex-direction: column; gap: 0.5em;}
     textarea {height:10em;}

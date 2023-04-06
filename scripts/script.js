@@ -36,3 +36,19 @@ function unhidetextarea(event) {
     }
 }
 document.body.addEventListener("click",unhidetextarea)
+
+let notesArray = [
+    {title:"note one", body:"this is my first note"},
+    {title:"note two", body:"this is my second note"}
+]
+
+function savenote(event) {
+    let textarea_element = document.querySelector("textarea")
+    if (event.target.textContent === "Save" && textarea_element.value !== "") {
+        note_title = prompt("What is the note title?")
+        note_body = textarea_element.value
+        note_object = {title: note_title, body: note_body}
+        notesArray.push(note_object)
+    }
+}
+document.body.addEventListener("click",savenote)

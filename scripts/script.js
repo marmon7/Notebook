@@ -1,4 +1,6 @@
-function darktheme(event) {
+let theme_button = document.querySelector("#grey_button")
+// Changes background and text to a dark theme and changes back to light theme when clicked again
+function dark_theme(event) {
     let aside_element = document.querySelector("aside")
     let body_element = document.querySelector("body")
     if (event.target.textContent === "Dark Theme") {
@@ -14,9 +16,11 @@ function darktheme(event) {
         return
     }
 }
-document.body.addEventListener("click",darktheme)
+theme_button.addEventListener("click",dark_theme)
 
-function hidetextarea(event) {
+let cancel_button = document.querySelector("#red_button")
+// hides the text area when cancel button is clicked
+function hide_textarea(event) {
     let right_buttons = document.querySelector(".right_buttons")
     let textarea_element = document.querySelector("textarea")
     if (event.target.textContent === "Cancel") {
@@ -24,9 +28,11 @@ function hidetextarea(event) {
         textarea_element.classList.add("hidden")
     }
 }
-document.body.addEventListener("click",hidetextarea)
+cancel_button.addEventListener("click",hide_textarea)
 
-function unhidetextarea(event) {
+let new_note_button = document.querySelector("#new_note_button")
+// unhides the textarea if it's hidden and resets the textarea value 
+function unhide_textarea(event) {
     let right_buttons = document.querySelector(".right_buttons")
     let textarea_element = document.querySelector("textarea")
     if (event.target.textContent === "New Note") {
@@ -35,20 +41,35 @@ function unhidetextarea(event) {
         textarea_element.value = ""
     }
 }
-document.body.addEventListener("click",unhidetextarea)
+new_note_button.addEventListener("click",unhide_textarea)
 
 let notesArray = [
     {title:"note one", body:"this is my first note"},
     {title:"note two", body:"this is my second note"}
 ]
 
-function savenote(event) {
-    let textarea_element = document.querySelector("textarea")
+let notes_list = document.querySelector(".notes_list")
+let textarea_element = document.querySelector("textarea")
+let save_button = document.querySelector("#save_button")
+// save the textarea value as the note.body in an array, prompts user for a title, adds the title to the aside list
+function save_note(event) {
     if (event.target.textContent === "Save" && textarea_element.value !== "") {
-        note_title = prompt("What is the note title?")
-        note_body = textarea_element.value
-        note_object = {title: note_title, body: note_body}
+        do {note_title = prompt("What is the note title? (cannot be blank)")} while (note_title === "")
+        let note_body = textarea_element.value
+        let note_object = {title: note_title, body: note_body}
         notesArray.push(note_object)
+        let newli = document.createElement("li")
+        newli.textContent = note_title
+        notes_list.appendChild(newli)
     }
 }
-document.body.addEventListener("click",savenote)
+save_button.addEventListener("click",save_note)
+// when li item is clicked will check the noteArray for the matching title and body and display the body in the textarea
+function note_opener(event) {
+    for (let note of notesArray) {
+        if (event.target.textContent === note.title) {
+            textarea_element.value = note.body
+        }
+    }
+}
+notes_list.addEventListener("click",note_opener)
